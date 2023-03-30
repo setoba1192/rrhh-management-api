@@ -1,5 +1,7 @@
 package com.softcaribbean.rh.domain.model;
 
+import com.softcaribbean.rh.domain.model.estado.EntidadEstado;
+import com.softcaribbean.rh.domain.model.geo.Ciudad;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -12,37 +14,39 @@ public class Empleado implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_empleado")
-    private Long idEmpleado;
+    @Column(name = "id")
+    private Long id;
 
-    @Column(name = "nombre")
-    private String nombre;
+    @ManyToOne
+    @JoinColumn(name = "persona_id")
+    private Persona persona;
 
-    @Column(name = "apellido")
-    private String apellido;
+    @Column(name = "email_corporativo")
+    private String emailCorporativo;
 
-    @Column(name = "fecha_nacimiento")
-    private String fechaNacimiento;
+    @Column(name = "telefono_corporativo")
+    private String telefono_corporativo;
 
-    @Column(name = "genero")
-    private String genero;
+    @Column(name = "direccion_trabajo")
+    private String direccion_trabajo;
 
-    @Column(name = "email")
-    private String email;
+    @ManyToOne
+    @JoinColumn(name = "ciudad_id")
+    private Ciudad ciudad_trabajo;
 
-    @Column(name = "telefono")
-    private String telefono;
+    @ManyToOne
+    @JoinColumn(name = "cargo_id")
+    private Cargo cargo;
 
-    @Column(name = "direccion")
-    private String direccion;
+    @ManyToOne
+    @JoinColumn(name = "empresa_id")
+    private Empresa empresa;
 
-    @Column(name = "ciudad")
-    private String ciudad;
+    @ManyToOne
+    @JoinColumn(name = "estado_id")
+    private EntidadEstado estado;
 
-    @Column(name = "estado")
-    private String estado;
-
-    @Column(name = "codigo_postal")
-    private String codigoPostal;
+    @Column(name = "eliminado", columnDefinition = "boolean default false")
+    private boolean eliminado;
 
 }

@@ -15,11 +15,12 @@ public class Cargo implements Serializable {
     @Column(name = "id_cargo")
     private Long idCargo;
 
-    @Column(name = "nombre_cargo")
-    private String nombreCargo;
+    @Column(name = "nombre")
+    private String nombre;
 
     @Column(name = "descripcion")
     private String descripcion;
 
-    // Constructores, getters y setters
+    @Column(name = "eliminado", columnDefinition = "boolean default false")
+    private boolean eliminado;
 }
