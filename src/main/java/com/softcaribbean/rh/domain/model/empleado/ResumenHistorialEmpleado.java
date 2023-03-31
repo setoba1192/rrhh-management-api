@@ -2,7 +2,7 @@ package com.softcaribbean.rh.domain.model.empleado;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.softcaribbean.rh.domain.model.lista.Lista;
+import com.softcaribbean.rh.domain.model.lista.ListaElemento;
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Data;
@@ -20,7 +20,7 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "resumen_historial_empleado")
 public class ResumenHistorialEmpleado {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -52,7 +52,7 @@ public class ResumenHistorialEmpleado {
      */
     @ManyToOne
     @JoinColumn(name = "tipo_id")
-    private Lista tipo;
+    private ListaElemento tipo;
 
 
 }
