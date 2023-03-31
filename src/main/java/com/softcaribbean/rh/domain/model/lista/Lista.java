@@ -6,12 +6,12 @@ import lombok.Builder;
 import lombok.Data;
 
 /**
- * @author Joan Roa
- * <p>
  * Tabla que contiene el tipo de lista
  * <p>
  * Aquí se parametriza las listas genéricas para
  * las diferentes entidades
+ *
+ * @author Joan Roa S.
  */
 
 @Data

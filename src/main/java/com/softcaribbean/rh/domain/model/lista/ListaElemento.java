@@ -5,9 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 
 /**
- * @author Joan Roa
- * <p>
  * Esta tabla contiene las listas de acuerdo a la entidad
+ *  @author Joan Roa S.
  */
 
 @Data

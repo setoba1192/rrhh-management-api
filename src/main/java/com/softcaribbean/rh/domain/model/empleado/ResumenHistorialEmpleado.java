@@ -10,10 +10,9 @@ import lombok.Data;
 import java.time.LocalDate;
 
 /**
- * @author Joan Roa
- * <p>
  * Esta clase contiene información del resumen histórico laboral
  * y de educación del empleado
+ * @author Joan Roa S.
  */
 @Data
 @Builder

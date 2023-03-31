@@ -6,6 +6,13 @@ import lombok.Data;
 
 import java.io.Serializable;
 
+/**
+ * Areas dentro de la compañia
+ * Ej: Desarrollo de Software, Recursos Humanos, Ingeniería, Administración
+ *
+ * @author Joan Roa
+ */
+
 @Data
 @Builder
 @Entity

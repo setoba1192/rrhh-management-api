@@ -1,7 +1,6 @@
 package com.softcaribbean.rh.domain.model.empleado;
 
 import com.softcaribbean.rh.domain.model.Persona;
-import com.softcaribbean.rh.domain.model.empresa.Empresa;
 import com.softcaribbean.rh.domain.model.estado.EntidadEstado;
 import com.softcaribbean.rh.domain.model.geo.Ciudad;
 import jakarta.persistence.*;

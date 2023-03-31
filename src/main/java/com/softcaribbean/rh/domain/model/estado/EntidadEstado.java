@@ -5,13 +5,12 @@ import lombok.Builder;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 
 @Data
 @Builder
 @Entity
 @Table(name = "estados_tablas")
-public class EntidadEstado implements Serializable{
+public class EntidadEstado implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
