@@ -1,4 +1,4 @@
-package com.softcaribbean.rh.domain.model;
+package com.softcaribbean.rh.domain.model.empleado;
 
 import jakarta.persistence.*;
 import lombok.Data;

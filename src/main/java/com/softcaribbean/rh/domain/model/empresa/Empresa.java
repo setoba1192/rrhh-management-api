@@ -1,4 +1,4 @@
-package com.softcaribbean.rh.domain.model;
+package com.softcaribbean.rh.domain.model.empresa;
 
 import com.softcaribbean.rh.domain.model.geo.Ciudad;
 import jakarta.persistence.*;
