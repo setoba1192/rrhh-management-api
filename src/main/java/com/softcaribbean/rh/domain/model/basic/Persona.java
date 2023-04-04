@@ -1,4 +1,4 @@
-package com.softcaribbean.rh.domain.model;
+package com.softcaribbean.rh.domain.model.basic;
 
 import com.softcaribbean.rh.domain.model.estado.EntidadEstado;
 import com.softcaribbean.rh.domain.model.geo.Ciudad;
