@@ -4,12 +4,14 @@ import com.softcaribbean.rh.domain.model.basic.Persona;
 import com.softcaribbean.rh.domain.model.estado.EntidadEstado;
 import com.softcaribbean.rh.domain.model.geo.Ciudad;
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
 
 import java.io.Serializable;
 import java.time.LocalDate;
 
 @Data
+@Builder
 @Entity
 @Table(name = "empleados")
 public class Empleado implements Serializable {

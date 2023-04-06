@@ -1,11 +1,13 @@
 package com.softcaribbean.rh.domain.model.empleado;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
 
 import java.io.Serializable;
 
 @Data
+@Builder
 @Entity
 @Table(name = "cargos")
 public class Cargo implements Serializable {
