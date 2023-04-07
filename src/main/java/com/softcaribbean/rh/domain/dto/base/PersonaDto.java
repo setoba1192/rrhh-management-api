@@ -1,15 +1,19 @@
 package com.softcaribbean.rh.domain.dto.base;
 
-import com.softcaribbean.rh.domain.model.estado.EntidadEstado;
-import com.softcaribbean.rh.domain.model.geo.Ciudad;
+import com.softcaribbean.rh.domain.dto.estado.EntidadEstadoDto;
+import com.softcaribbean.rh.domain.dto.geo.CiudadDto;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.time.LocalDate;
 
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class PersonaDto implements Serializable {
 
     private Long id;
@@ -20,7 +24,7 @@ public class PersonaDto implements Serializable {
 
     private LocalDate fechaNacimiento;
 
-    private GeneroDto generoDto;
+    private GeneroDto genero;
 
     private String email;
 
@@ -28,11 +32,11 @@ public class PersonaDto implements Serializable {
 
     private String direccion;
 
-    private Ciudad ciudad;
+    private CiudadDto ciudad;
 
     private String fotoUrl;
 
-    private EntidadEstado estado;
+    private EntidadEstadoDto estado;
 
     private boolean eliminado;
 

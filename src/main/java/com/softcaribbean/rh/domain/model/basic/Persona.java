@@ -3,8 +3,10 @@ package com.softcaribbean.rh.domain.model.basic;
 import com.softcaribbean.rh.domain.model.estado.EntidadEstado;
 import com.softcaribbean.rh.domain.model.geo.Ciudad;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -12,8 +14,10 @@ import java.time.LocalDate;
 @Data
 @Builder
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "personas")
-public class Persona  implements Serializable {
+public class Persona implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
