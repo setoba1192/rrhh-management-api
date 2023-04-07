@@ -1,5 +1,10 @@
 package com.softcaribbean.rh.infraestructure.util;
 
+/**
+ * Clase para definir la ruta de las api's
+ *
+ * @author Joan Roa
+ */
 public final class ApiName {
 
     public final class AdministracionRecursos {

@@ -9,6 +9,15 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+/**
+ * Clase genérica para retornar respuesta de las API's
+ * es obligatorio utilizar esta clase para todos los retornos
+ * de cualquier controlador, puede haber excepciones para otros
+ * casos de uso.
+ *
+ * @author Joan Roa
+ */
+
 @Builder
 @Data
 @AllArgsConstructor

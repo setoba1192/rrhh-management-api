@@ -1,4 +1,4 @@
-package com.softcaribbean.rh.application.controller.administracion;
+package com.softcaribbean.rh.application.controller;
 
 import com.softcaribbean.rh.application.dto.RespuestaGenerica;
 import com.softcaribbean.rh.application.exception.ResourceNotFoundException;
@@ -13,6 +13,12 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.util.List;
+
+/**
+ * Clase para manejo de excepciones
+ *
+ * @author Joan Roa
+ */
 
 @RestControllerAdvice
 @RequiredArgsConstructor

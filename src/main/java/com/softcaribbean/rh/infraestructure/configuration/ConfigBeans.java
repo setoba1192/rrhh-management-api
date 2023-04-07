@@ -5,6 +5,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
+/**
+ * Configuración base de Beans
+ *
+ * @author Joan Roa
+ */
+
 @Configuration
 public class ConfigBeans {
 
