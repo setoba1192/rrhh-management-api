@@ -15,11 +15,11 @@ import java.util.Locale;
 
 @Component
 @RequiredArgsConstructor
-public class MensajeValidacionService {
+public class MensajesService {
 
     private final MessageSource messageSource;
 
-    public String getValidationMessage(String mensajeHash) {
+    public String getMensaje(String mensajeHash) {
 
         return messageSource.getMessage(mensajeHash, null, Locale.getDefault());
     }
