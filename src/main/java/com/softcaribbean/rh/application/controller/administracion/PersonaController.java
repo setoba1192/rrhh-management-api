@@ -9,10 +9,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
@@ -30,6 +27,14 @@ public class PersonaController {
                 .data(personaService.create(personaDto))
                 .mensaje(mensajesService.getMensaje("persona.crear.correcto"))
                 .build(), HttpStatus.CREATED);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<RespuestaGenerica> consultarPorId(@PathVariable Long id) {
+
+        return ResponseEntity.ok(RespuestaGenerica.builder()
+                .data(personaService.findById(id))
+                .build());
     }
 
 }

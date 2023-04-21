@@ -38,10 +38,12 @@ public class PersonaServiceImpl implements PersonaService {
     @Override
     public PersonaDto create(PersonaDto personaDto) {
 
-
-        Persona persona = this.personaMapper.toEntity(personaDto);
-
-        Persona personaSaved  = personaRepository.save(persona);
+        /**
+         * Obligar el id en null dado que solo se registra
+         * en este metodo
+         */
+        personaDto.setId(null);
+        Persona personaSaved  = personaRepository.save(this.personaMapper.toEntity(personaDto));
         personaDto.setId(personaSaved.getId());
         return personaDto;
     }
