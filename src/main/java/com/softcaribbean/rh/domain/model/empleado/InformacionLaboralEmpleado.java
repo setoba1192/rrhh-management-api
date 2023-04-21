@@ -18,7 +18,7 @@ import java.time.LocalDate;
 @Table(name = "informacion_laboral_empleado")
 public class InformacionLaboralEmpleado implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
 

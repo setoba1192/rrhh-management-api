@@ -20,9 +20,12 @@ import java.time.LocalDate;
 public class Persona implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
+
+    @Column(unique = true, nullable = false)
+    private String identificacion;
 
     @Column(name = "nombre")
     private String nombre;

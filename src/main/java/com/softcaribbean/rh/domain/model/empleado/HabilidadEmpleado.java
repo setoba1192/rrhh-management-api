@@ -13,7 +13,7 @@ import java.io.Serializable;
 @Table(name = "empleados_habilidades")
 public class HabilidadEmpleado implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
 

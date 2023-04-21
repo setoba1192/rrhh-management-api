@@ -15,7 +15,7 @@ import lombok.Data;
 @Table(name = "lista_elementos")
 public class ListaElemento {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
 

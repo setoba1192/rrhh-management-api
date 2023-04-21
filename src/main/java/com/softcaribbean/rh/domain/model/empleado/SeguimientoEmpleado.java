@@ -22,8 +22,9 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "seguimiento_empleados")
 public class SeguimientoEmpleado {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
 

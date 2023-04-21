@@ -1,12 +1,12 @@
 package com.softcaribbean.rh.application.service.basic.impl;
 
 import com.softcaribbean.rh.application.exception.ResourceNotFoundException;
-import com.softcaribbean.rh.application.service.basic.CrudBaseService;
 import com.softcaribbean.rh.application.service.basic.PersonaService;
 import com.softcaribbean.rh.domain.dto.base.PersonaDto;
+import com.softcaribbean.rh.domain.model.basic.Persona;
 import com.softcaribbean.rh.infraestructure.mapper.base.PersonaMapper;
 import com.softcaribbean.rh.infraestructure.repository.basic.PersonaRepository;
-import com.softcaribbean.rh.infraestructure.util.MensajeValidacionService;
+import com.softcaribbean.rh.infraestructure.util.MensajesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,13 +22,12 @@ public class PersonaServiceImpl implements PersonaService {
     private PersonaMapper personaMapper;
 
     @Autowired
-    private MensajeValidacionService mensajeValidacionService;
+    private MensajesService mensajesService;
 
     @Override
     public PersonaDto findById(Long id) {
-        return personaMapper.toDto(personaRepository.findById(id).orElseThrow(() -> {
-            throw new ResourceNotFoundException(mensajeValidacionService.getValidationMessage("global.resource.notfound"));
-        }));
+        return personaMapper.toDto(personaRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException(mensajesService.getMensaje("global.resource.notfound"))));
     }
 
     @Override
@@ -37,8 +36,14 @@ public class PersonaServiceImpl implements PersonaService {
     }
 
     @Override
-    public PersonaDto create(PersonaDto dto) {
-        return null;
+    public PersonaDto create(PersonaDto personaDto) {
+
+
+        Persona persona = this.personaMapper.toEntity(personaDto);
+
+        Persona personaSaved  = personaRepository.save(persona);
+        personaDto.setId(personaSaved.getId());
+        return personaDto;
     }
 
     @Override

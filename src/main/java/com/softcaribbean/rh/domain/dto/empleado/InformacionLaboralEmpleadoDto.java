@@ -26,6 +26,9 @@ public class InformacionLaboralEmpleadoDto implements Serializable {
 
     private AreaDto area;
 
+    /**
+     * Fecha de Inicio en la empresa asignada
+     */
     private LocalDate fechaInicio;
 
 }
