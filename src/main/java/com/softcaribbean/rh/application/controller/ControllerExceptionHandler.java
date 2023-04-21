@@ -3,7 +3,7 @@ package com.softcaribbean.rh.application.controller;
 import com.softcaribbean.rh.application.dto.RespuestaGenerica;
 import com.softcaribbean.rh.application.exception.ResourceNotFoundException;
 import com.softcaribbean.rh.application.exception.ServiceException;
-import com.softcaribbean.rh.infraestructure.util.MensajeValidacionService;
+import com.softcaribbean.rh.infraestructure.util.MensajesService;
 import jakarta.validation.ConstraintViolationException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -24,7 +24,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ControllerExceptionHandler {
 
-    private final MensajeValidacionService mensajeValidacionService;
+    private final MensajesService mensajesService;
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(ConstraintViolationException.class)
@@ -34,7 +34,7 @@ public class ControllerExceptionHandler {
                 .map(constraintViolation -> constraintViolation.getMessage()).toList();
 
         return RespuestaGenerica.builder()
-                .mensaje(mensajeValidacionService.getValidationMessage("global.error.found"))
+                .mensaje(mensajesService.getMensaje("global.error.found"))
                 .errores(errors)
                 .build();
     }
@@ -47,7 +47,7 @@ public class ControllerExceptionHandler {
                 .map(error -> error.getDefaultMessage()).toList();
 
         return RespuestaGenerica.builder()
-                .mensaje(mensajeValidacionService.getValidationMessage("global.error.found"))
+                .mensaje(mensajesService.getMensaje("global.error.found"))
                 .errores(errors)
                 .build();
     }
