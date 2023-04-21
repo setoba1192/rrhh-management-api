@@ -12,7 +12,7 @@ public interface CiudadMapper {
 
     CiudadMapper INSTANCE = Mappers.getMapper(CiudadMapper.class);
 
-    Ciudad toEntity(CiudadDto generoDto);
+    Ciudad toEntity(CiudadDto ciudad);
 
     CiudadDto toDto(Ciudad ciudad);
 }
