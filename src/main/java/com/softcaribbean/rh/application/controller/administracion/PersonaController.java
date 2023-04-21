@@ -37,4 +37,12 @@ public class PersonaController {
                 .build());
     }
 
+    @PutMapping
+    public ResponseEntity<RespuestaGenerica> actualizar(@Valid @RequestBody PersonaDto personaDto) {
+
+        return new ResponseEntity<>(RespuestaGenerica.builder()
+                .data(personaService.update(personaDto))
+                .mensaje(mensajesService.getMensaje("persona.actualizar.correcto"))
+                .build(), HttpStatus.CREATED);
+    }
 }
