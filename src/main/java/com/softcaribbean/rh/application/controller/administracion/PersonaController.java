@@ -4,6 +4,7 @@ import com.softcaribbean.rh.application.dto.RespuestaGenerica;
 import com.softcaribbean.rh.application.service.basic.PersonaService;
 import com.softcaribbean.rh.domain.dto.base.PersonaDto;
 import com.softcaribbean.rh.infraestructure.util.ApiName;
+import com.softcaribbean.rh.infraestructure.util.MensajesService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -20,11 +21,14 @@ public class PersonaController {
 
     private final PersonaService personaService;
 
+    private final MensajesService mensajesService;
+
     @PostMapping
     public ResponseEntity<RespuestaGenerica> crear(@Valid @RequestBody PersonaDto personaDto) {
 
         return new ResponseEntity<>(RespuestaGenerica.builder()
                 .data(personaService.create(personaDto))
+                .mensaje(mensajesService.getMensaje("persona.crear.correcto"))
                 .build(), HttpStatus.CREATED);
     }
 

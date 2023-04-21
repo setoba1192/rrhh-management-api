@@ -3,6 +3,7 @@ package com.softcaribbean.rh.domain.dto.base;
 import com.softcaribbean.rh.domain.dto.estado.EntidadEstadoDto;
 import com.softcaribbean.rh.domain.dto.geo.CiudadDto;
 import com.softcaribbean.rh.infraestructure.anotation.validation.Age;
+import jakarta.persistence.Column;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,6 +21,9 @@ import java.time.LocalDate;
 public class PersonaDto implements Serializable {
 
     private Long id;
+
+    @NotBlank(message = "{persona.identificacion.notBlank}")
+    private String identificacion;
 
     @NotBlank(message = "{persona.nombre.notBlank}")
     @Size(min = 2, max = 50, message = "{persona.nombre.size}")
