@@ -2,6 +2,7 @@ package com.softcaribbean.rh.infraestructure.mapper;
 
 import com.softcaribbean.rh.domain.dto.base.GeneroDto;
 import com.softcaribbean.rh.domain.dto.base.PersonaDto;
+import com.softcaribbean.rh.domain.dto.estado.EntidadEstadoDto;
 import com.softcaribbean.rh.domain.dto.geo.CiudadDto;
 import com.softcaribbean.rh.domain.model.basic.Persona;
 import com.softcaribbean.rh.infraestructure.mapper.base.PersonaMapper;
@@ -80,6 +81,33 @@ public class PersonaMapperTest {
         assertThat(ciudadDto.getNombre()).isEqualTo(persona.getCiudad().getNombre());
 
     }
+
+    @Test
+    public void givenPersonaDtoWithChildEstadoDto_whenMapsToEntity_returnPersonaWithEstado() {
+
+        PersonaMapper personaMapper = PersonaMapper.INSTANCE;
+
+        EntidadEstadoDto estado = new EntidadEstadoDto();
+        estado.setId(1L);
+        estado.setNombre("Activo");
+
+        PersonaDto personaDto = PersonaDto
+                .builder()
+                .id(1L)
+                .nombre("Joan")
+                .apellido("Roa")
+                .estado(estado)
+                .direccion("Calle 41 sur 33 - 178")
+                .build();
+
+        Persona persona = personaMapper.toEntity(personaDto);
+
+        assertThat(estado.getId()).isEqualTo(persona.getEstado().getId());
+        assertThat(estado.getNombre()).isEqualTo(persona.getEstado().getNombre());
+
+    }
+
+
 
 
 }
